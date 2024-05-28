@@ -1,0 +1,11 @@
+body {
+    overflow: hidden;
+}
+
+body > button {
+    display: none;
+}
+
+body > label.type1 {
+    display: none;
+}
