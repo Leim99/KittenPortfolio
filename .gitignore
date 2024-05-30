@@ -17,8 +17,5 @@ tests/**/coverage/
 node_modules/
 yarn.lock
 package-lock.json
-<<<<<<< HEAD
 .vercel
-=======
 dist
->>>>>>> 0b3bbff6aab78b456a40b92060c65f061c1b3aa0
