@@ -1,8 +1,8 @@
 <!--
  * @Author: Leim99 leiminwork@gmail.com
  * @Date: 2024-04-16 16:45:54
- * @LastEditors: Leim99 leiminwork@gmail.com
- * @LastEditTime: 2024-05-24 23:20:57
+ * @LastEditors: leimin99 leimimwork@gmail.com
+ * @LastEditTime: 2024-05-30 15:47:47
  * @FilePath: /kitten-blog/src/views/main/index.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -37,7 +37,7 @@
                 <span title="PDF作品集">下载附件<i class="iconfont icon-xia"></i></span>
               </a>
               <ul class="subnav">
-                <li><a>PDF作品集下载</a></li>
+                <li><a :href="downloadUrl" download="portfolio.pdf">PDF作品集下载</a></li>
                 <li><a>个人简历下载</a></li>
               </ul>
             </li>
@@ -84,7 +84,7 @@
                   </td>
                   <td>
                     <p>15342823165@163.com</p>
-                    <span>gmail</span>
+                    <span>email</span>
                   </td>
                 </tr>
               </table>
@@ -242,6 +242,7 @@ export default {
       currentPage: 0,
       itemsPerPage: 3,
       toNext:true,
+      downloadUrl: '/example.pdf',
       crationItems: [
         {id:0, icon: 'icon-cduan', title: 'C端设计', description: ['杭州艺星小程序', '变美功课bot小程序', '大娱互娱直播APP','房又家APP','财通金融APP'], moreShow: false, },
         {id:1, icon: 'icon-bduan', title: 'B端设计', description: ['商城后台管理系统', 'SAAS官网', '公司官网','可视化大屏'], moreShow: false, },
@@ -406,7 +407,7 @@ export default {
     });
 
     // console.log('Passing activeTab22:', activeTab);
-    }
+    },
   },
   mounted() {
     window.addEventListener('scroll', this.handleScroll);

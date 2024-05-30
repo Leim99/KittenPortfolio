@@ -13,6 +13,8 @@ tests/**/coverage/
 *.ntvs*
 *.njsproj
 *.sln
+
 node_modules/
 yarn.lock
 package-lock.json
+.vercel
