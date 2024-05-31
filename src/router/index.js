@@ -1,8 +1,8 @@
 /*
  * @Author: Leim99 leiminwork@gmail.com
  * @Date: 2024-04-27 16:02:57
- * @LastEditors: Leim99 leiminwork@gmail.com
- * @LastEditTime: 2024-05-24 18:07:50
+ * @LastEditors: leimin99 leimimwork@gmail.com
+ * @LastEditTime: 2024-05-30 19:24:35
  * @FilePath: /my-blog/src/router/index.js
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -24,7 +24,7 @@ const routes = [
       import( "../views/main/index.vue"),
   },
   {
-    path: '/desc', //详情
+    path: '/desc', //封面
     name: 'desc',
     component: () =>
       import( "../views/desc/index.vue"),

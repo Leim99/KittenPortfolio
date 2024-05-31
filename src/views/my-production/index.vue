@@ -29,8 +29,8 @@
                                       <span title="PDF作品集">下载附件<i class="iconfont icon-xia"></i></span>
                                     </a>
                                     <ul class="subnav">
-                                      <li><a>PDF作品集下载</a></li>
-                                      <li><a>个人简历下载</a></li>
+                                      <li><a :href="downloadPortfolioUrl" download="portfolio.pdf">PDF作品集下载</a></li>
+                                      <li><a :href="downloadResumeUrl" download="resume.pdf">个人简历下载</a></li>
                                     </ul>
                                   </li>
                         </ul>
@@ -60,7 +60,7 @@
                       <div v-for="(item, index) in tabs[activeIndex].items" :key="item.id" class="item" @click="goToDetails(item.id)" v-on:mouseenter="onMouseEnterBlog(index, $event)"
                       v-on:mouseleave="onMouseLeaveBlog(index, $event)">
                       <div class="item_img">
-                      <div class="imgMask" :style="item.rightShow==true?'transition: all 0.36s ease;':''"></div>
+                      <div class="imgMask" :style="item.rightShow==true?'transition: all 0.36s ease;':'background-color:rgba(0,0,0,0.5)'"></div>
                         <img :src="item.image" alt="Image"  :style="item.rightShow==true?'transition: transform 0.3s ease-in-out; transform-origin: center;transform: scale(1.1);':'transition: transform 0.3s ease-in-out; transform-origin: center;'"/>
                     </div>
                     <div class="item_info">
@@ -91,48 +91,49 @@ export default {
             sliderOffset: 0,
             activeTab: null,
             bannerScroll:1,
+            downloadPortfolioUrl: '/UI作品集-雷敏.pdf',
+            downloadResumeUrl:'/UI设计师-5年UI工作经验-雷敏.pdf',
       tabs: [
         {
           title: 'C端设计',
           items: [
-            { id:1, title: '杭州艺星小程序', image: require('../../assets/images/anlifenx.png'),label:'界面设计 小程序',rightShow:false  },
-            { id:2, title: '变美功课bot', image: require('../../assets/images/anlifenx.png'),label:'界面设计 小程序' ,rightShow:false },
-            { id:3, title: '大娱互娱直播', image: require('../../assets/images/zhibo.png'),label:'界面设计 APP',rightShow:false },
-            { id:4, title: '房又家找房', image: require('../../assets/images/fangyj.png'),label:'界面设计 APP',rightShow:false },
-            { id:5, title: '财通金融', image: require('../../assets/images/fangyj.png'),label:'界面设计 APP',rightShow:false },
+            { id:1, title: '杭州艺星小程序', image: require('../../assets/images/fengmian/yestar.png'),label:'界面设计 小程序',rightShow:false  },
+            { id:2, title: '变美功课bot', image: require('../../assets/images/fengmian/anlifenx.png'),label:'界面设计 小程序' ,rightShow:false },
+            { id:3, title: '大娱互娱直播', image: require('../../assets/images/fengmian/zhibo.png'),label:'界面设计 APP',rightShow:false },
+            { id:4, title: '房又家找房', image: require('../../assets/images/fengmian/fangyj.png'),label:'界面设计 APP',rightShow:false },
+            { id:5, title: '财通金融', image: require('../../assets/images/fengmian/jinrong.png'),label:'界面设计 APP',rightShow:false },
           ]
         },
         {
           title: 'B端设计',
           items: [
-            { id:6, title: '商城后台管理', image: require('../../assets/images/yestar.png'),label:'界面设计 后台管理',rightShow:false },
-            { id:7, title: 'SAAS官网', image: require('../../assets/images/yestar.png'),label:'界面设计 网页设计',rightShow:false },
-            { id:8, title: '公司官网', image: require('../../assets/images/yestar.png'),label:'界面设计 网页设计',rightShow:false },
-            { id:9, title: '可视化大屏', image: require('../../assets/images/yestar.png'),label:'界面设计 可视化',rightShow:false }
+            { id:6, title: '商城后台管理', image: require('../../assets/images/fengmian/shop.png'),label:'界面设计 后台管理',rightShow:false },
+            { id:8, title: '公司官网', image: require('../../assets/images/fengmian/guanw.png'),label:'界面设计 网页设计',rightShow:false },
+            { id:9, title: '可视化大屏', image: require('../../assets/images/fengmian/keshihua.png'),label:'界面设计 可视化',rightShow:false },
+            { id:7, title: 'SAAS官网', image: require('../../assets/images/fengmian/saas.png'),label:'界面设计 网页设计',rightShow:false }
           ]
         },
         {
           title: '运营设计',
           items: [
-            { id:10, title: '专题活动', image: require('../../assets/images/yestar.png'),label:'专题活动界面设计',rightShow:false },
-            { id:11, title: '海报', image: require('../../assets/images/yestar.png'),label:'海报设计练习',rightShow:false },
-            { id:12, title: 'Banner', image: require('../../assets/images/yestar.png'),label:'运营banner',rightShow:false }
+            { id:10, title: '专题活动', image: require('../../assets/images/fengmian/zhuanti.png'),label:'界面设计 专题活动',rightShow:false },
+            { id:11, title: '海报', image: require('../../assets/images/fengmian/haibao.png'),label:'平面设计 活动海报',rightShow:false },
+            { id:12, title: 'Banner', image: require('../../assets/images/fengmian/banner.jpg'),label:'平面设计 活动banner',rightShow:false },
           ]
         },
         {
           title: 'AIGC相关',
           items: [
-            { id:13, title: '露营', image: require('../../assets/images/yestar.png'),label:'活动海报设计',rightShow:false },
-            { id:14, title: '节气', image: require('../../assets/images/yestar.png'),label:'活动海报设计',rightShow:false },
-            { id:15, title: 'IP', image: require('../../assets/images/yestar.png'),label:'IP形象设计',rightShow:false }
+            { id:13, title: '露营', image: require('../../assets/images/fengmian/aigchaibao.png'),label:'AIGC 露营海报 ',rightShow:false },
+            { id:14, title: 'IP', image: require('../../assets/images/fengmian/aigcip.png'),label:'AIGC 人物IP形象',rightShow:false }
           ]
         },
         {
           title: '其他',
           items: [
-            { id:16, title: '视频剪辑', image: require('../../assets/images/yestar.png'),label:'杭州艺星会员沙龙视频整合',rightShow:false },
-            { id:17, title: 'AE动效', image: require('../../assets/images/yestar.png'),label:'AE动效设计',rightShow:false },
-            { id:18, title: 'C4D', image: require('../../assets/images/yestar.png'),label:'建模练习',rightShow:false },
+            { id:15, title: '杭州艺星会员沙龙视频整合', image: require('../../assets/images/fengmian/shipinjianji.png'),label:' PR视频剪辑',rightShow:false },
+            { id:16, title: 'AE动效', image: require('../../assets/images/fengmian/dongxiao.png'),label:'动效设计 gif',rightShow:false },
+            { id:17, title: 'C4D', image: require('../../assets/images/fengmian/c4d.png'),label:'建模练习',rightShow:false },
           ]
         }
       ]
@@ -184,7 +185,7 @@ export default {
         go_dec(index) {
             if (index == 0) {
                 this.$router.push({
-                    path: "/desc",
+                    path: "/",
                 });
             }
             if (index == 1) {
@@ -194,7 +195,10 @@ export default {
             }
             if (index == 2) {
                 this.$router.push({
-                    path: "/production/1",
+                  name: "production",
+                  query:{
+                    id:0
+                  } 
                 });
             }
             if (index == 3) {
@@ -517,6 +521,7 @@ a {
     width: 100%;
     height: 100%;
     z-index: 1;
+    /* background-color: rgba(0, 0, 0, .50); */
 }
 .tab-content .item img{
     width:100%;

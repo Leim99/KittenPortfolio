@@ -84,7 +84,7 @@ export default {
     go_dec(index) {
       if (index == 0) {
         this.$router.push({
-          path: "/desc",
+          path: "/",
         });
       }
       if(index==1){
