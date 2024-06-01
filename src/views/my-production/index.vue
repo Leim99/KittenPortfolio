@@ -60,12 +60,12 @@
                       <div v-for="(item, index) in tabs[activeIndex].items" :key="item.id" class="item" @click="goToDetails(item.id)" v-on:mouseenter="onMouseEnterBlog(index, $event)"
                       v-on:mouseleave="onMouseLeaveBlog(index, $event)">
                       <div class="item_img">
-                      <div class="imgMask" :style="item.rightShow==true?'transition: all 0.36s ease;':'background-color:rgba(0,0,0,0.5)'"></div>
+                      <div class="imgMask" :style="item.rightShow==true?'transition: all 0.36s ease;':'background-color:rgba(0,0,0,0.3)'"></div>
                         <img :src="item.image" alt="Image"  :style="item.rightShow==true?'transition: transform 0.3s ease-in-out; transform-origin: center;transform: scale(1.1);':'transition: transform 0.3s ease-in-out; transform-origin: center;'"/>
                     </div>
                     <div class="item_info">
                         <div class="leftCon" :style="item.rightShow==true?'padding-left:10px;transition: all 0.6s ease 0s;':'transition: all 0.6s ease 0s;'">
-                        <div class="item_title" :style="item.rightShow==true?'color:#EB740C':''">{{ item.title }}{{item.id}}</div>
+                        <div class="item_title" :style="item.rightShow==true?'color:#EB740C':''">{{ item.title }}</div>
                         <div class="item_label">{{item.label}}</div>
                     </div>
                     <a href class="right_more" :style="item.rightShow==true?'opacity:1;padding-right:10px;transition: all 0.6s ease 0s;':'transition: all 0.6s ease 0s;opacity:0'">
@@ -91,8 +91,8 @@ export default {
             sliderOffset: 0,
             activeTab: null,
             bannerScroll:1,
-            downloadPortfolioUrl: '/UI作品集-雷敏.pdf',
-            downloadResumeUrl:'/UI设计师-5年UI工作经验-雷敏.pdf',
+            downloadPortfolioUrl: '/2024UI作品集-雷敏.pdf',
+            downloadResumeUrl:'/5年UI设计工作经验-雷敏.pdf',
       tabs: [
         {
           title: 'C端设计',
@@ -521,7 +521,6 @@ a {
     width: 100%;
     height: 100%;
     z-index: 1;
-    /* background-color: rgba(0, 0, 0, .50); */
 }
 .tab-content .item img{
     width:100%;
@@ -580,7 +579,8 @@ button {
 }
 
 button.active {
-  color: #181818; /* Highlight the active tab with red color */
+  color: #181818;
+  position: relative;
 }
 
 .tab-slider {
@@ -589,7 +589,7 @@ button.active {
     height: 54px;
     background-color: white;
     transition: transform 0.3s ease-in-out;
-    z-index: -1;
+    z-index: 0;
     border-radius: 50px;
 }
 </style>

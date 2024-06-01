@@ -2,7 +2,7 @@
  * @Author: Leim99 leiminwork@gmail.com
  * @Date: 2024-05-15 14:24:57
  * @LastEditors: leimin99 leimimwork@gmail.com
- * @LastEditTime: 2024-05-31 22:27:57
+ * @LastEditTime: 2024-06-01 11:49:19
  * @FilePath: /my-blog/src/views/my-production/production.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -47,7 +47,7 @@
             </div>
             <div v-if="item">
             <div class="header_title">
-                <div style="padding-top:20%"></div>
+                <div style="padding-top:12%"></div>
                 <p class="title_en">{{item.title}}</p>
                 <p class="title_cn">{{item.label}}</p>
                 <div style="padding-top:8%"></div>
@@ -73,8 +73,8 @@
                     scrollHeight: 0,
                     activeIndex: 0,
                     item: null,
-                    downloadPortfolioUrl: '/UI作品集-雷敏.pdf',
-                    downloadResumeUrl:'/UI设计师-5年UI工作经验-雷敏.pdf',
+                    downloadPortfolioUrl: '/2024UI作品集-雷敏.pdf',
+                    downloadResumeUrl:'/5年UI设计工作经验-雷敏.pdf',
                 };
             },
             created() {
@@ -322,7 +322,7 @@ a {
     font-size: 20px;
     color:#999999;
     letter-spacing: 4px;
-    margin-top:30px;
+    margin-top:40px;
 }
 
 </style>
