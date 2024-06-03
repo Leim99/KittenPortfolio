@@ -90,7 +90,7 @@ export default {
             sliderOffset: 0,
             activeTab: null,
             bannerScroll:1,
-            downloadPortfolioUrl: 'portfolio.pdf',
+            downloadPortfolioUrl: '/portfolio.pdf',
       tabs: [
         {
           title: 'C端设计',
