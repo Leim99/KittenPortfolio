@@ -11,6 +11,19 @@
     <router-view />
   </div>
 </template>
+<script>
+export default {
+  created(){
+    if(this.isMobile()) alert('为了更好的浏览体验，请复制链接到电脑端浏览')
+  },
+  methods:{
+    isMobile(){
+      const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+      return /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(userAgent);
+    }
+  }
+}
+</script>
 <style>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
