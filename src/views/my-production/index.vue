@@ -29,7 +29,7 @@
                                       <span title="PDF作品集">下载附件<i class="iconfont icon-xia"></i></span>
                                     </a>
                                     <ul class="subnav">
-                                      <li><a :href="downloadPortfolioUrl" download="雷敏的UI作品集和简历.zip">UI作品集和简历下载</a></li>
+                                      <li><a :href="downloadPortfolioUrl" download="portfolio.pdf">UI作品集和简历下载</a></li>
                                     </ul>
                                   </li>
                         </ul>
@@ -51,7 +51,7 @@
                     </div>
                   <div class="tabs">
                     <div class="tab-slider" :style="sliderStyle"></div>
-                    <button v-for="(tab, index) in tabs" :key="index" @click="moveSlider(index)" :class="{ active: activeIndex === index}">
+                    <button v-for="(tab, index) in tabs" :key="index" @click="moveSlider(index)" :class="{ active: activeIndex == index}">
                       {{ tab.title }}
                     </button>
                   </div>
@@ -90,7 +90,7 @@ export default {
             sliderOffset: 0,
             activeTab: null,
             bannerScroll:1,
-            downloadPortfolioUrl: '/雷敏的UI作品集和简历.zip',
+            downloadPortfolioUrl: 'portfolio.pdf',
       tabs: [
         {
           title: 'C端设计',
