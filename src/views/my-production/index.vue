@@ -175,7 +175,7 @@ export default {
         console.log('this.$route.query.id',this.$route.query.id)
     window.addEventListener('scroll', this.handleScroll);
     // 我的作品tab
-    this.activeTab = this.tabs[0]; 
+    this.activeTab = this.tabs[0];
     this.$nextTick(() => {
       this.updateSlider();
     });
@@ -225,7 +225,7 @@ export default {
                   name: "production",
                   query:{
                     id:0
-                  } 
+                  }
                 });
             }
             if (index == 3) {
@@ -261,7 +261,7 @@ export default {
         // 我的作品tab切换滑动样式
         sliderStyle() {
     const style = {
-      width: `${this.sliderWidth}px`, 
+      width: `${this.sliderWidth}px`,
       transform: `translateX(${this.sliderOffset}px)`
     };
     console.log('sliderStyle:', style);
@@ -515,7 +515,7 @@ a {
     display: table;
     padding-top: 80px;
     text-align: left;
-} 
+}
 .tab-content .item{
     width: calc(100% / 2 - 40px);
     margin-bottom: 40px;
@@ -523,7 +523,7 @@ a {
     display:inline-block;
     cursor: pointer;
 
-}  
+}
 .tab-content .item_img{
     position: relative;
     display: block;

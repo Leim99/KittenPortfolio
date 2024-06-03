@@ -141,7 +141,7 @@
       <div class="mycration carousel-container">
          <button @click="prev" :style="toNext==true?'opacity:1':'opacity:0.2;cursor:auto;'"  class="nav-button nav-button-left"><i class="iconfont icon-zuo"></i></button>
         <div class="cration_content carousel">
-          <ul class="content_list carousel-track" 
+          <ul class="content_list carousel-track"
           :style="trackStyle">
             <li v-for="(item, index) in crationItems" :key="index" v-on:mouseenter="onMouseEnter(index, $event)"
               v-on:mouseleave="onMouseLeave(index, $event)" @click="goToProductionPage(item)"  class="hover-box serviceitem carousel-item" style="width:30%" :style="item.moreShow==true?'padding-top:50px;padding-bottom:50px':''">
@@ -303,7 +303,7 @@ export default {
           name: "production",
           query:{
             id:0
-          } 
+          }
         });
       }
       if(index==3){
@@ -568,7 +568,6 @@ a {
   position: relative;
   display: flex;
   box-sizing: border-box;
-  width: 100vw !important;
   flex-direction: column;
   background-image: url("../../assets/images/color-bg.png");
 
@@ -580,8 +579,7 @@ a {
 
 .layout_top_content .layout_top_hello {
   /* width: 40%; */
-  margin: 0 auto;
-  margin-top: 200px;
+  margin: 200px auto 0;
   transition: transform 0.5s, background-color 0.5s;
 }
 
@@ -590,8 +588,7 @@ a {
   width: 160px;
   border-radius: 50%;
   overflow: hidden;
-  margin: 0 auto;
-  margin-top: 40px;
+  margin: 40px auto 0;
   box-shadow: 0 6px 50px rgb(255 145 43 / 72%);
 }
 
@@ -920,7 +917,7 @@ display: inline-block;
       left: 50%;
       width: 100%;
       height: 0%;
-      background-color: #EB740C; 
+      background-color: #EB740C;
       transition: height 0.3s ease, top 0.3s ease;
       transform: translateX(-50%);
       z-index: 1; /* 把伪元素放在按钮文本后面 */
