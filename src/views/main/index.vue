@@ -2,7 +2,7 @@
  * @Author: Leim99 leiminwork@gmail.com
  * @Date: 2024-04-16 16:45:54
  * @LastEditors: leimin99 leimimwork@gmail.com
- * @LastEditTime: 2024-06-01 01:21:51
+ * @LastEditTime: 2024-06-03 15:54:55
  * @FilePath: /kitten-blog/src/views/main/index.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -37,8 +37,7 @@
                 <span title="PDF作品集">下载附件<i class="iconfont icon-xia"></i></span>
               </a>
               <ul class="subnav">
-                <li><a :href="downloadPortfolioUrl" download="portfolio.pdf">PDF作品集下载</a></li>
-                <li><a :href="downloadResumeUrl" download="resume.pdf">个人简历下载</a></li>
+                <li><a :href="downloadPortfolioUrl" download="portfolio.pdf">雷敏的UI作品集和简历下载</a></li>
               </ul>
             </li>
           </ul>
@@ -57,7 +56,7 @@
               </div>
               <div class="name_information">
                 <p class="name">雷敏 28岁</p>
-                <p class="information">5年设计相关工作经验，2年前端开发经验，能陪产品做定位，能陪开发找bug；<br/>懂交互，注重用户体验；能独立完成整个项目的设计。</p>
+                <p class="information">5年UI设计工作经验，2年前端开发工作经验，能陪产品做定位，能陪开发找bug；<br/>懂交互，注重用户体验；能独立完成整个项目的设计。</p>
               </div>
             </div>
           </div>
@@ -242,8 +241,7 @@ export default {
       currentPage: 0,
       itemsPerPage: 3,
       toNext:true,
-      downloadPortfolioUrl: '/2024UI作品集-雷敏.pdf',
-      downloadResumeUrl:'/5年UI设计工作经验-雷敏.pdf',
+      downloadPortfolioUrl: '/雷敏的UI作品集和简历.zip',
       crationItems: [
         {id:0, icon: 'icon-cduan', title: 'C端设计', description: ['杭州艺星小程序', '变美功课bot小程序', '大娱互娱直播APP','房又家APP','财通金融APP'], moreShow: false, },
         {id:1, icon: 'icon-bduan', title: 'B端设计', description: ['商城后台管理系统', 'SAAS官网', '公司官网','可视化大屏'], moreShow: false, },
@@ -252,8 +250,8 @@ export default {
         {id:4, icon: 'icon-shipinjianji', title: '其他', description: ['视频剪辑','AE动效','C4D练习'], moreShow: false, }
       ],
       timelineItems: [
-        { beforeTime: '2022.05', afterTime: '2024.04', title: '杭州艺星医疗美容医院有限公司', description: ['独立负责小程序和后台的 UI 设计工作;', '根据产品提出的迭代需求与用户体验，提出产品视觉效果进行优化;', '与开发和产品对接，共同完成交互界面的落地上线工作;', '独立配合运营完成 banner、H5等活动页面设计。','可查看已上线小程序《杭州艺星》《变美功课bot》'] },
-        { beforeTime: '2019.05', afterTime: '2022.03', title: '杭州巨大电子商务有限公司', description: ['负责 App、web 端的视觉风格定义和用户界面设计；', '准确理解产品需求，根据产品原型图完成产品 Ui 设计；', '与开发人员密切配合，确保 UI界面还原度；', '根据客户需求设计 logo、banner。'] },
+        { beforeTime: '2022.05', afterTime: '2024.04', title: '杭州艺星医疗美容医院有限公司', description: ['根据产品需求，参与项目评审体验用户调研与分析，深入了解业务流程，抓住痛点独立完成整个项目的设计；', '根据产品经理提出的迭代需求与用户体验需求，提出产品视觉效果进行优化；', '与开发和产品对接，跟进产品实现、测试并保证产品的质量，已跟进上线3款小程序和6个后台管理系统；', '独立配合运营完成 banner、H5等活动页面设计。','可查看已上线小程序《杭州艺星》《变美功课bot》'] },
+        { beforeTime: '2019.05', afterTime: '2022.03', title: '杭州巨大电子商务有限公司', description: ['负责公司互联网产品 APP、web、h5用户界面设计工作，根据客户需求设计 logo、banner；', '与产品经理讨论进行需求分析，参与部分原型稿设计工作；', '与开发人员密切配合，确保 UI界面还原度；', '负责线上产品测试工作，网页浏览器的各种兼容性和不同手机的适配。'] },
         { beforeTime: ' 2017.06', afterTime: '2019.04', title: '深圳摩岩网络科技有限公司', description: ['负责 APP、H5的开发；', '根据产品需求完成静态页面及交互功能的编写；', '完成简单的前后端联调；', '修复测试和验收过程中的 bug。','可查看已上线APP《秒书》'] }
       ],
 
@@ -594,6 +592,7 @@ a {
   overflow: hidden;
   margin: 0 auto;
   margin-top: 40px;
+  box-shadow: 0 6px 50px rgb(255 145 43 / 72%);
 }
 
 .avatar_img img {
