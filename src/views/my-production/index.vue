@@ -51,7 +51,7 @@
                     </div>
                   <div class="tabs">
                     <div class="tab-slider" :style="sliderStyle"></div>
-                    <button v-for="(tab, index) in tabs" :key="index" @click="moveSlider(index)" :class="{ active: activeIndex === index }">
+                    <button v-for="(tab, index) in tabs" :key="index" @click="moveSlider(index)" :class="{ active: activeIndex === index}">
                       {{ tab.title }}
                     </button>
                   </div>
@@ -71,7 +71,7 @@
                     <i class="iconfont icon-jiantou"></i>
                   </a>
                 </div>
-                      </div>
+                </div>
                   </div>
             </div>
             </div>
@@ -138,16 +138,37 @@ export default {
         };
     },
     watch: {
-        '$route.params': function(toParams) {
-      // 监听路由参数变化，更新 activeTab
-      this.activeTab = toParams.activeTab;
-      this.activeIndex = this.activeTab
-    console.log('this.activeIndex...9999',this.activeIndex)
+    //     '$route.params': function(toParams) {
+    //   // 监听路由参数变化，更新 activeTab
+    //   this.activeTab = toParams.activeTab;
+    //   this.activeIndex = this.activeTab
+    // console.log('this.activeIndex...9999',this.activeIndex)
+    // }
+    // '$route.query': function (toParams) {
+    //   // 监听路由参数变化，更新活动Tab索引
+    //   const tabIndex = toParams.tab;
+    //   if (tabIndex !== undefined) {
+    //     this.activeIndex = parseInt(tabIndex, 10);
+    //   }
+    //   console.log('00000',toParams.tab)
+    // }
+    '$route.query.tab'(newValue) {
+      if (newValue !== undefined && this.tabs[newValue]) {
+        this.activeIndex = newValue;
+      } else {
+        console.error('Invalid tab index provided by route.');
+        // 可以选择重置到默认 tab 或进行其他错误处理
+      }
     }
   },
     created() {
-        this.activeIndex = this.$route.query.id;
-        console.log('this.activeTab...111',this.activeTab)
+        // this.activeIndex = this.$route.query.id;
+        // console.log('this.activeTab...111',this.activeIndex)
+        const tabParam = this.$route.query.tab;
+    if (tabParam !== undefined && this.tabs[tabParam]) {
+      this.activeIndex = tabParam;
+      console.log('this.activeIndex.....123',this.activeIndex)
+    }
   },
     mounted() {
         // 页面滚动监听
@@ -167,6 +188,14 @@ export default {
         moveSlider(index) {
       this.activeIndex = index;
       this.$nextTick(this.updateSlider);  // 确保状态变更后调用
+      this.$router.push({ name: 'production', query: { tab: index } });
+    //   if (this.tabs[index]) {
+    //   this.activeIndex = index;
+    //   this.$router.push({ name: 'production', params: { tab: index } });
+    // } else {
+    //   console.error(`Tab at index ${index} does not exist.`);
+    //   // 你可以在这里添加额外的错误处理逻辑，比如重置 activeIndex 到一个有效的值
+    // }
     },
     // 我的作品tab切换效果
     updateSlider() {
