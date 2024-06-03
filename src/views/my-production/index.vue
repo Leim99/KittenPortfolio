@@ -29,8 +29,7 @@
                                       <span title="PDF作品集">下载附件<i class="iconfont icon-xia"></i></span>
                                     </a>
                                     <ul class="subnav">
-                                      <li><a :href="downloadPortfolioUrl" download="portfolio.pdf">PDF作品集下载</a></li>
-                                      <li><a :href="downloadResumeUrl" download="resume.pdf">个人简历下载</a></li>
+                                      <li><a :href="downloadPortfolioUrl" download="雷敏的UI作品集和简历.zip">UI作品集和简历下载</a></li>
                                     </ul>
                                   </li>
                         </ul>
@@ -91,8 +90,7 @@ export default {
             sliderOffset: 0,
             activeTab: null,
             bannerScroll:1,
-            downloadPortfolioUrl: '/2024UI作品集-雷敏.pdf',
-            downloadResumeUrl:'/5年UI设计工作经验-雷敏.pdf',
+            downloadPortfolioUrl: '/雷敏的UI作品集和简历.zip',
       tabs: [
         {
           title: 'C端设计',

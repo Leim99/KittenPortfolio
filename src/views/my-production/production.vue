@@ -2,7 +2,7 @@
  * @Author: Leim99 leiminwork@gmail.com
  * @Date: 2024-05-15 14:24:57
  * @LastEditors: leimin99 leimimwork@gmail.com
- * @LastEditTime: 2024-06-03 15:56:52
+ * @LastEditTime: 2024-06-03 16:04:02
  * @FilePath: /my-blog/src/views/my-production/production.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -37,7 +37,7 @@
                                       <span title="PDF作品集">下载附件<i class="iconfont icon-xia"></i></span>
                                     </a>
                                     <ul class="subnav">
-                                        <li><a :href="downloadPortfolioUrl" download="雷敏的UI作品集和简历.zip">雷敏的UI作品集和简历下载</a></li>
+                                        <li><a :href="downloadPortfolioUrl" download="雷敏的UI作品集和简历.zip">UI作品集和简历下载</a></li>
                                     </ul>
                                   </li>
                         </ul>
