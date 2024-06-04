@@ -106,9 +106,9 @@ export default {
           title: 'B端设计',
           items: [
             { id:6, title: '商城后台管理', image: require('../../assets/images/fengmian/shop.png'),label:'界面设计 后台管理',rightShow:false },
-            { id:8, title: '公司官网', image: require('../../assets/images/fengmian/guanw.png'),label:'界面设计 网页设计',rightShow:false },
-            { id:9, title: '可视化大屏', image: require('../../assets/images/fengmian/keshihua.png'),label:'界面设计 可视化',rightShow:false },
-            { id:7, title: 'SAAS官网', image: require('../../assets/images/fengmian/saas.png'),label:'界面设计 网页设计',rightShow:false }
+            { id:7, title: '公司官网', image: require('../../assets/images/fengmian/guanw.png'),label:'界面设计 网页设计',rightShow:false },
+            { id:8, title: '可视化大屏', image: require('../../assets/images/fengmian/keshihua.png'),label:'界面设计 可视化',rightShow:false },
+            { id:9, title: 'SAAS官网', image: require('../../assets/images/fengmian/saas.png'),label:'界面设计 网页设计',rightShow:false }
           ]
         },
         {

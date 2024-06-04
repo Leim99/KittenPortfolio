@@ -2,7 +2,7 @@
  * @Author: Leim99 leiminwork@gmail.com
  * @Date: 2024-04-16 16:45:54
  * @LastEditors: leimin99 leimimwork@gmail.com
- * @LastEditTime: 2024-06-04 15:55:07
+ * @LastEditTime: 2024-06-04 17:09:33
  * @FilePath: /kitten-blog/src/views/main/index.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -123,7 +123,7 @@
             <p>Skill</p>
             <span>工作技能{{ scrollHeight }}</span>
             <div class="skill_text">
-              熟练使用Sketch、PS、AI、Figma、Axure、XD等主流设计软件；了解HTML、CSS、JS等前端语言；了解AIGC工具（Midjourney）。
+              熟练使用Sketch、PS、AI、Figma、Axure、XD等主流设计软件；了解HTML、CSS、JS等前端语言；了解AIGC工具（ChatGPT、Midjourney）。
             </div>
           </div>
           <div class="skill_con">
