@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "NODE_OPTIONS=--openssl-legacy-provider vue-cli-service build",
+    "build": "set NODE_OPTIONS=--openssl-legacy-provider & vuepress build docs",
     "deploy": "NODE_OPTIONS=--openssl-legacy-provider bash deploy.sh"
   },
   "engines": {
