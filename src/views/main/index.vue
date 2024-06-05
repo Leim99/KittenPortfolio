@@ -2,7 +2,7 @@
  * @Author: Leim99 leiminwork@gmail.com
  * @Date: 2024-04-16 16:45:54
  * @LastEditors: leimin99 leimimwork@gmail.com
- * @LastEditTime: 2024-06-04 17:09:33
+ * @LastEditTime: 2024-06-05 17:53:50
  * @FilePath: /kitten-blog/src/views/main/index.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -52,7 +52,9 @@
             <img class="for_top_img" src="../../assets//images/hello.png" />
             <div class="avatar_infor">
               <div class="avatar_img">
+                  <div class="solidtwo"><div class="solidone">
                 <img src="../../assets/images/头像.png" />
+              </div></div>
               </div>
               <div class="name_information">
                 <p class="name">雷敏 28岁</p>
@@ -559,9 +561,10 @@ a {
 }
 .layout_top_bg {
   background: linear-gradient(to bottom, rgba(255, 0, 0, 0),rgba(48,33,23,1));
-  height: 1360px;
+  /* height: 1360px; */
   background-repeat: no-repeat;
   position: relative;
+  padding-bottom:100px;
 }
 
 .layout_top_content {
@@ -584,14 +587,28 @@ a {
 }
 
 .avatar_img {
-  height: 160px;
-  width: 160px;
+  height: 240px;
+  width: 240px;
   border-radius: 50%;
   overflow: hidden;
   margin: 40px auto 0;
-  box-shadow: 0 6px 50px rgb(255 145 43 / 72%);
+  border:1px solid rgba(255,255,255,0.1);
+  padding:16px;
 }
 
+.avatar_img .solidone{
+  box-shadow: 0 0px 20px rgba(255, 145, 43, 0.72);
+  border:1px solid rgba(255,213,105,0.60);
+  display: inline-flex;
+}
+.avatar_img .solidone,.avatar_img .solidtwo{
+  border-radius: 50%;
+  overflow: hidden;
+}
+.avatar_img .solidtwo{
+  border:1px solid rgba(255,255,255,0.2);
+  padding:16px;
+}
 .avatar_img img {
   max-width: 100%;
 }
@@ -627,7 +644,6 @@ a {
   visibility: visible;
   animation-delay: 0s;
 }
-
 .name_information {
   color: #ffffff;
   font-size: 14px;
