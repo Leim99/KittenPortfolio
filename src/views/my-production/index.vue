@@ -137,86 +137,39 @@ export default {
       ]
         };
     },
-    watch: {
-    //     '$route.params': function(toParams) {
-    //   // 监听路由参数变化，更新 activeTab
-    //   this.activeTab = toParams.activeTab;
-    //   this.activeIndex = this.activeTab
-    // console.log('this.activeIndex...9999',this.activeIndex)
-    // }
-    // '$route.query': function (toParams) {
-    //   // 监听路由参数变化，更新活动Tab索引
-    //   const tabIndex = toParams.tab;
-    //   if (tabIndex !== undefined) {
-    //     this.activeIndex = parseInt(tabIndex, 10);
-    //   }
-    //   console.log('00000',toParams.tab)
-    // }
-    // 获取tab值
-    '$route.query.tab'(newValue) {
-      if (newValue !== undefined && this.tabs[newValue]) {
-        this.activeIndex = newValue;
-      } else {
-        console.error('Invalid tab index provided by route.');
-        // 可以选择重置到默认 tab 或进行其他错误处理
-      }
-    }
-  },
     created() {
-        // this.activeIndex = this.$route.query.id;
-        // console.log('this.activeTab...111',this.activeIndex)
-        const tabParam = this.$route.query.tab;
-    if (tabParam !== undefined && this.tabs[tabParam]) {
-      this.activeIndex = tabParam;
-      console.log('this.activeIndex.....123',this.activeIndex)
-    }
-  },
+      let saveTabInx = sessionStorage.getItem('saveTabInx')
+      if (saveTabInx && this.tabs[saveTabInx]) this.activeIndex = saveTabInx
+    },
     mounted() {
-        // 页面滚动监听
-        console.log('this.$route.query.id',this.$route.query.id)
-    window.addEventListener('scroll', this.handleScroll);
-    // 我的作品tab
-    if(this.$route.query.tab){
-      console.log('this.activeIndex11...',this.activeIndex)
-    this.activeTab = this.tabs[0];
-      console.log('this.activeTab...',this.activeTab)
-    }else{
-      this.activeIndex = this.$route.query.id
-      console.log('this.activeIndex22...',this.activeIndex)
-    }
-    this.$nextTick(() => {
-      this.updateSlider();
-    });
+      window.addEventListener('scroll', this.handleScroll)
+      // 我的作品tab
+      this.$nextTick(() => {
+        this.updateSlider();
+      });
     },
 //     beforeDestroy() {
 //     window.removeEventListener('scroll', this.handleScroll);
 //   },
     methods: {
         // 我的作品tab切换定位
-        moveSlider(index) {
-      this.activeIndex = index;
-      this.$nextTick(this.updateSlider);  // 确保状态变更后调用
-      this.$router.push({ name: 'production', query: { tab: index } });
-    //   if (this.tabs[index]) {
-    //   this.activeIndex = index;
-    //   this.$router.push({ name: 'production', params: { tab: index } });
-    // } else {
-    //   console.error(`Tab at index ${index} does not exist.`);
-    //   // 你可以在这里添加额外的错误处理逻辑，比如重置 activeIndex 到一个有效的值
-    // }
-    },
-    // 我的作品tab切换效果
-    updateSlider() {
-      const activeTab = this.$el.querySelectorAll('button')[this.activeIndex];
-      if (activeTab) {
-        this.sliderWidth = activeTab.offsetWidth;
-        this.sliderOffset = activeTab.offsetLeft;
-        console.log('Slider updated:', this.sliderWidth, this.sliderOffset); // 调试信息
-      } else {
-        console.error('Active tab element is not found.');
-      }
-    },
-    // 顶部标签切换
+      moveSlider(index) {
+        this.activeIndex = index;
+        this.$nextTick(this.updateSlider);  // 确保状态变更后调用
+        sessionStorage.setItem('saveTabInx', index)
+      },
+      // 我的作品tab切换效果
+      updateSlider() {
+        const activeTab = this.$el.querySelectorAll('button')[this.activeIndex];
+        if (activeTab) {
+          this.sliderWidth = activeTab.offsetWidth;
+          this.sliderOffset = activeTab.offsetLeft;
+          console.log('Slider updated:', this.sliderWidth, this.sliderOffset); // 调试信息
+        } else {
+          console.error('Active tab element is not found.');
+        }
+      },
+      // 顶部标签切换
         go_dec(index) {
             if (index == 0) {
                 this.$router.push({

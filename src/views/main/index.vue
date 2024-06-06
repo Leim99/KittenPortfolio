@@ -141,7 +141,7 @@
             <img src="../../assets/images/mycration.png" />
       </div>
       <div class="mycration carousel-container">
-         <button @click="prev" :style="toNext==true?'opacity:1':'opacity:0.2;cursor:auto;'"  class="nav-button nav-button-left"><i class="iconfont icon-zuo"></i></button>
+       <button v-show="currentPage" @click="prev" :style="toNext==true?'opacity:1':'opacity:0.2;cursor:auto;'"  class="nav-button nav-button-left"><i class="iconfont icon-zuo"></i></button>
         <div class="cration_content carousel">
           <ul class="content_list carousel-track"
           :style="trackStyle">
@@ -169,7 +169,7 @@
             <span>MORE</span>
           </el-button> -->
         </div>
-        <button @click="next" :style="toNext==true?'opacity:1':'opacity:0.2;cursor:auto;'" class="nav-button nav-button-right"><i class="iconfont icon-you"></i></button>
+        <button v-show="currentPage < totalPages - 1" @click="next" :style="toNext==true?'opacity:1':'opacity:0.2;cursor:auto;'" class="nav-button nav-button-right"><i class="iconfont icon-you"></i></button>
       </div>
     </div>
     <!-- 博客 -->
@@ -301,6 +301,7 @@ export default {
         });
       }
       if(index==2){
+        sessionStorage.setItem('saveTabInx', '')
         this.$router.push({
           name: "production",
           query:{
@@ -399,13 +400,10 @@ export default {
     goToProductionPage(item) {
       console.log('Passing activeTab:',item.id);
       // const activeTab = item.id // || '1'; 如果 item.tab 不存在，则使用默认值
-    this.$router.push({
-      name: 'production',
-      query: {
-        id: item.id,
-        // activeTab: activeTab
-      }
-    });
+      sessionStorage.setItem('saveTabInx', item.id)
+      this.$router.push({
+        name: 'production',
+      });
 
     // console.log('Passing activeTab22:', activeTab);
     },
