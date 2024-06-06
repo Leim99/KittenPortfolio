@@ -129,9 +129,9 @@ export default {
         {
           title: '其他',
           items: [
-            { id:15, title: '杭州艺星会员沙龙视频整合', image: require('../../assets/images/fengmian/shipinjianji.png'),label:' PR视频剪辑',rightShow:false },
-            { id:16, title: 'AE动效', image: require('../../assets/images/fengmian/dongxiao.png'),label:'动效设计 gif',rightShow:false },
-            { id:17, title: 'C4D', image: require('../../assets/images/fengmian/c4d.png'),label:'建模练习',rightShow:false },
+            { id:15, title: 'AE动效', image: require('../../assets/images/fengmian/dongxiao.png'),label:'动效设计 gif',rightShow:false },
+            { id:16, title: 'C4D', image: require('../../assets/images/fengmian/c4d.png'),label:'建模练习',rightShow:false },
+            { id:17, title: '杭州艺星会员沙龙视频整合', image: require('../../assets/images/fengmian/shipinjianji.png'),label:' PR视频剪辑',rightShow:false },
           ]
         }
       ]
@@ -152,6 +152,7 @@ export default {
     //   }
     //   console.log('00000',toParams.tab)
     // }
+    // 获取tab值
     '$route.query.tab'(newValue) {
       if (newValue !== undefined && this.tabs[newValue]) {
         this.activeIndex = newValue;
@@ -175,11 +176,13 @@ export default {
         console.log('this.$route.query.id',this.$route.query.id)
     window.addEventListener('scroll', this.handleScroll);
     // 我的作品tab
-    if(this.tabs){
-      console.log('this.tabs...',this.tabs)
+    if(this.$route.query.tab){
+      console.log('this.activeIndex11...',this.activeIndex)
     this.activeTab = this.tabs[0];
+      console.log('this.activeTab...',this.activeTab)
     }else{
       this.activeIndex = this.$route.query.id
+      console.log('this.activeIndex22...',this.activeIndex)
     }
     this.$nextTick(() => {
       this.updateSlider();

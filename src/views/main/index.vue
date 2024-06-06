@@ -2,7 +2,7 @@
  * @Author: Leim99 leiminwork@gmail.com
  * @Date: 2024-04-16 16:45:54
  * @LastEditors: leimin99 leimimwork@gmail.com
- * @LastEditTime: 2024-06-05 17:53:50
+ * @LastEditTime: 2024-06-06 15:59:18
  * @FilePath: /kitten-blog/src/views/main/index.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -71,21 +71,21 @@
                 <tr>
                   <td>
                     <p>湖北工程学院</p>
-                    <span>school</span>
+                    <span>School</span>
                   </td>
                   <td>
                     <p>软件技术</p>
-                    <span>specialty</span>
+                    <span>Specialty</span>
                   </td>
                 </tr>
                 <tr>
                   <td>
                     <p>15342823165</p>
-                    <span>tel</span>
+                    <span>Tel</span>
                   </td>
                   <td>
                     <p>15342823165@163.com</p>
-                    <span>email</span>
+                    <span>Email</span>
                   </td>
                 </tr>
               </table>
@@ -125,7 +125,7 @@
             <p>Skill</p>
             <span>工作技能{{ scrollHeight }}</span>
             <div class="skill_text">
-              熟练使用Sketch、PS、AI、Figma、Axure、XD等主流设计软件；了解HTML、CSS、JS等前端语言；了解AIGC工具（ChatGPT、Midjourney）。
+              熟练使用Sketch、PS、AI、Figma、Axure、XD等主流设计软件；可以使用AE、C4D制作简单的动效和基础建模；可以使用PR工具进行简单的视频剪辑；了解HTML、CSS、JS等前端语言；了解AIGC工具（ChatGPT、Midjourney）。
             </div>
           </div>
           <div class="skill_con">

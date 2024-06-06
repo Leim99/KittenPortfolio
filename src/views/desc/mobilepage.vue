@@ -2,7 +2,7 @@
  * @Author: Leim99 leiminwork@gmail.com
  * @Date: 2024-04-16 16:46:36
  * @LastEditors: leimin99 leimimwork@gmail.com
- * @LastEditTime: 2024-06-06 15:48:04
+ * @LastEditTime: 2024-06-06 15:51:19
  * @FilePath: /kitten-blog/src/views/desc/mobilepage.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -36,7 +36,7 @@
         data () {
           return {
             msg1: '为了更好的浏览体验',
-            msg2: '请复制链接到电脑端进行浏览',
+            msg2: '请复制链接到电脑端进行浏览~',
             textToCopy: '',
             showMessage: false,
           }

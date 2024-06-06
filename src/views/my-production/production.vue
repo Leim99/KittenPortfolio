@@ -2,7 +2,7 @@
  * @Author: Leim99 leiminwork@gmail.com
  * @Date: 2024-05-15 14:24:57
  * @LastEditors: leimin99 leimimwork@gmail.com
- * @LastEditTime: 2024-06-05 18:33:30
+ * @LastEditTime: 2024-06-06 16:04:08
  * @FilePath: /my-blog/src/views/my-production/production.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -141,9 +141,9 @@
                     { id: 12,title:'Banner',label:'平面设计 活动banner',images:[require('../../assets/images/banner/banner1.jpg'),require('../../assets/images/banner/banner2.png'),require('../../assets/images/banner/banner3.png'),require('../../assets/images/banner/banner4.png'),] },
                     { id: 13,title:'露营',label:'AIGC 海报',images:[require('../../assets/images/luying/aigc1.jpg'),require('../../assets/images/luying/aigc2.jpg')] },
                     { id: 14,title:'IP',label:'AIGC 人物IP',images:[require('../../assets/images/ip/aigc3.png'),require('../../assets/images/ip/aigc4.png')] },
-                    { id: 15,title:'杭州艺星会员沙龙视频整合',label:'PR视频剪辑',images:[require('../../assets/images/pr/pr1.mp4')] },
-                    { id: 16,title:'AE动效',label:'动效设计 gif',images:[require('../../assets/images/ae/jf1.gif'),require('../../assets/images/ae/jf2.gif'),require('../../assets/images/ae/liwuhe.gif'),require('../../assets/images/ae/hujiao.gif')] },
-                    { id: 17,title:'C4D',label:'建模练习',images:[require('../../assets/images/c4d/naozhong.png'),require('../../assets/images/c4d/guangying.gif'),require('../../assets/images/c4d/feiji.gif'),require('../../assets/images/c4d/xuexiao.gif'),require('../../assets/images/c4d/guaiwu.jpg')]},
+                    { id: 15,title:'AE动效',label:'动效设计 gif',images:[require('../../assets/images/ae/jf1.gif'),require('../../assets/images/ae/jf2.gif'),require('../../assets/images/ae/liwuhe.gif'),require('../../assets/images/ae/hujiao.gif')] },
+                    { id: 16,title:'C4D',label:'建模练习',images:[require('../../assets/images/c4d/naozhong.png'),require('../../assets/images/c4d/guangying.gif'),require('../../assets/images/c4d/feiji.gif'),require('../../assets/images/c4d/xuexiao.gif'),require('../../assets/images/c4d/guaiwu.jpg')]},
+                    { id: 17,title:'杭州艺星会员沙龙视频整合',label:'PR视频剪辑',images:[require('../../assets/images/pr/pr1.mp4')] },
                 ];
                 this.item = items.find(item => item.id === parseInt(id));
                 },
