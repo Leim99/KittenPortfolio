@@ -2,7 +2,7 @@
  * @Author: Leim99 leiminwork@gmail.com
  * @Date: 2024-04-16 16:46:36
  * @LastEditors: leimin99 leimimwork@gmail.com
- * @LastEditTime: 2024-06-06 15:43:54
+ * @LastEditTime: 2024-06-06 15:48:04
  * @FilePath: /kitten-blog/src/views/desc/mobilepage.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -83,9 +83,9 @@
               align-content: center;
           }
         .mobile_div .title{
-            font-size: 18px;
-            font-weight: 600;
-            line-height: 26px;
+            font-size: 16px;
+            /* font-weight: 600; */
+            line-height: 24px;
         }
         .mobile_div .card{
             position: relative;
@@ -96,7 +96,7 @@
             text-align: center;
             box-shadow: 0 3px 20px rgba(0, 0, 0, 0.9);
             color:#181818;
-            margin-top: 30px;
+            margin-top: 40px;
         }
         .mobile_div .card .avatar {
             width: 100px;
