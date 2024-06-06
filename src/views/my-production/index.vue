@@ -200,7 +200,7 @@ export default {
             const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
             this.scrollHeight = scrollTop
             const scrollY = window.scrollY;
-            const maxScroll = 200; // 调整为你需要的值
+            const maxScroll = 200; // 滑动的距离
             this.bannerScroll = Math.max(0, 1 - scrollY / maxScroll);
         },
         // 进入详情页

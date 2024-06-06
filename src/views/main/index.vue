@@ -2,7 +2,7 @@
  * @Author: Leim99 leiminwork@gmail.com
  * @Date: 2024-04-16 16:45:54
  * @LastEditors: leimin99 leimimwork@gmail.com
- * @LastEditTime: 2024-06-06 15:59:18
+ * @LastEditTime: 2024-06-07 00:02:45
  * @FilePath: /kitten-blog/src/views/main/index.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -123,7 +123,7 @@
         <div class="content_skill">
           <div class="skill_title">
             <p>Skill</p>
-            <span>工作技能{{ scrollHeight }}</span>
+            <span>工作技能</span>
             <div class="skill_text">
               熟练使用Sketch、PS、AI、Figma、Axure、XD等主流设计软件；可以使用AE、C4D制作简单的动效和基础建模；可以使用PR工具进行简单的视频剪辑；了解HTML、CSS、JS等前端语言；了解AIGC工具（ChatGPT、Midjourney）。
             </div>
@@ -143,8 +143,7 @@
       <div class="mycration carousel-container">
        <button v-show="currentPage" @click="prev" :style="toNext==true?'opacity:1':'opacity:0.2;cursor:auto;'"  class="nav-button nav-button-left"><i class="iconfont icon-zuo"></i></button>
         <div class="cration_content carousel">
-          <ul class="content_list carousel-track"
-          :style="trackStyle">
+          <ul class="content_list carousel-track" :style="trackStyle">
             <li v-for="(item, index) in crationItems" :key="index" v-on:mouseenter="onMouseEnter(index, $event)"
               v-on:mouseleave="onMouseLeave(index, $event)" @click="goToProductionPage(item)"  class="hover-box serviceitem carousel-item" style="width:30%" :style="item.moreShow==true?'padding-top:50px;padding-bottom:50px':''">
               <a class="serviceitem_content">
@@ -1140,7 +1139,7 @@ display: inline-block;
 .carousel-item {
   flex: 0 0 33.33%; /* 每个项目宽度占容器的 1/3 */
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   justify-content: center;
   box-sizing: border-box;
 }

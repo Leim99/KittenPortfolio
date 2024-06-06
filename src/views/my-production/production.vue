@@ -2,7 +2,7 @@
  * @Author: Leim99 leiminwork@gmail.com
  * @Date: 2024-05-15 14:24:57
  * @LastEditors: leimin99 leimimwork@gmail.com
- * @LastEditTime: 2024-06-06 16:04:08
+ * @LastEditTime: 2024-06-06 21:35:57
  * @FilePath: /my-blog/src/views/my-production/production.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -148,12 +148,9 @@
                 this.item = items.find(item => item.id === parseInt(id));
                 },
                 isImage(image) {
-                    console.log('imagessssss...',image)
-                    console.log('image...',/\.(jpeg|jpg|png|gif|svg)$/i.test(image))
                     return /\.(jpeg|jpg|png|gif|svg)$/i.test(image);
                 },
                 isVideo(image) {
-                    console.log('image...',/\.(mp4|webm|ogg)$/i.test(image))
                     return /\.(mp4|webm|ogg)$/i.test(image);
                 }
             },
