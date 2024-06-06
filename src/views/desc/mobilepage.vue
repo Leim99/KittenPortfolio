@@ -2,7 +2,7 @@
  * @Author: Leim99 leiminwork@gmail.com
  * @Date: 2024-04-16 16:46:36
  * @LastEditors: leimin99 leimimwork@gmail.com
- * @LastEditTime: 2024-06-06 14:09:06
+ * @LastEditTime: 2024-06-06 15:17:43
  * @FilePath: /kitten-blog/src/views/desc/mobilepage.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -14,14 +14,20 @@
             <div class="card">
                 <img class="avatar" src="../../../public/assets/images/title-icon.png"/>
                 <h1 class="name">KITTEN DESIGN</h1>
-                <p>https://www.leimin.fun</p>
-                <div class="card_button">
+                <input class="link_text" type="text" v-model="textToCopy" placeholder="https://www.leimin.fun" />
+                <!-- <p>https://www.leimin.fun</p> -->
+                <div class="card_button" @click="copyTextToClipboard">
                     <i class="iconfont icon-fuzhi"></i>
                     <span>复制链接</span>
                 </div>
                 <div class="background"></div>
             </div>
         </div>
+        <div class="message-container">
+        <transition name="fade" class="message-container">
+                <div v-if="showMessage" class="message">已复制</div>
+              </transition>
+            </div>
         </div>
       </template>
       
@@ -31,13 +37,31 @@
         data () {
           return {
             msg1: '为了更好的浏览体验',
-            msg2: '请复制链接到电脑端查看',
+            msg2: '请复制链接到电脑端进行浏览',
+            textToCopy: '',
+            showMessage: false,
           }
         },
       
         mounted() {},
       
         methods: {
+            async copyTextToClipboard() {
+      try {
+        // 使用 navigator.clipboard.writeText 方法复制文本到剪贴板
+        await navigator.clipboard.writeText(this.textToCopy);
+        this.showNotification()
+      } catch (err) {
+        // 处理可能的错误，例如权限被拒绝
+        alert('复制失败: ' + err.message);
+      }
+    },
+    showNotification() {
+      this.showMessage = true;
+      setTimeout(() => {
+        this.showMessage = false;
+      }, 1500);
+    },
         },
       };
       </script>
@@ -54,9 +78,9 @@
               align-content: center;
           }
         .mobile_div .title{
-            font-size: 24px;
+            font-size: 18px;
             font-weight: 600;
-            line-height: 36px;
+            line-height: 26px;
         }
         .mobile_div .card{
             position: relative;
@@ -65,7 +89,7 @@
             background-color: #fff;
             border-radius: 10px;
             text-align: center;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 3px 20px rgba(0, 0, 0, 0.9);
             color:#181818;
             margin-top: 30px;
         }
@@ -82,9 +106,11 @@
             font-weight: 100;
             font-size: 18px;
         }
-        .mobile_div .card p{
+        .mobile_div .card .link_text{
             opacity: 0.6;
             font-size: 14px;
+            border:none;
+            margin-bottom: 10px;
         }
         .mobile_div .card_button{
             height: 60px;
@@ -101,5 +127,45 @@
             font-size: 14px;
             font-weight: 500;
             padding-left: 10px;;
+        }
+        .mobile_div .background{
+            width: 100%;
+            height: 100px;
+            position: absolute;
+            top: -1px;
+            background: #181818;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+        .fade-enter-active, .fade-leave-active {
+        transition: opacity 0.5s;
+        }
+        .fade-enter, .fade-leave-to {
+        opacity: 0;
+        }
+        .message-container {
+        position: fixed; 
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        z-index: 1000; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        pointer-events: none; 
+        }
+
+        .message-container .message {
+        background-color: rgba(0, 0, 0, 0.7); 
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 5px; 
+        font-size: 14px; 
+        white-space: nowrap; 
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); 
+        max-width: 300px;
+        pointer-events: auto; 
+        margin-top: 80px;
         }
       </style>
