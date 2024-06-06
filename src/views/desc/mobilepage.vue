@@ -2,7 +2,7 @@
  * @Author: Leim99 leiminwork@gmail.com
  * @Date: 2024-04-16 16:46:36
  * @LastEditors: leimin99 leimimwork@gmail.com
- * @LastEditTime: 2024-06-06 15:17:43
+ * @LastEditTime: 2024-06-06 15:35:38
  * @FilePath: /kitten-blog/src/views/desc/mobilepage.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -14,9 +14,8 @@
             <div class="card">
                 <img class="avatar" src="../../../public/assets/images/title-icon.png"/>
                 <h1 class="name">KITTEN DESIGN</h1>
-                <input class="link_text" type="text" v-model="textToCopy" placeholder="https://www.leimin.fun" />
-                <!-- <p>https://www.leimin.fun</p> -->
-                <div class="card_button" @click="copyTextToClipboard">
+                <div ref="copyText" class="link_text" type="text"> https://www.leimin.fun</div>
+                <div class="card_button" @click="copyToClipboard">
                     <i class="iconfont icon-fuzhi"></i>
                     <span>复制链接</span>
                 </div>
@@ -25,7 +24,7 @@
         </div>
         <div class="message-container">
         <transition name="fade" class="message-container">
-                <div v-if="showMessage" class="message">已复制</div>
+                <div v-if="showMessage" class="message">已复制！</div>
               </transition>
             </div>
         </div>
@@ -46,14 +45,20 @@
         mounted() {},
       
         methods: {
-            async copyTextToClipboard() {
+            async copyToClipboard() {
       try {
-        // 使用 navigator.clipboard.writeText 方法复制文本到剪贴板
-        await navigator.clipboard.writeText(this.textToCopy);
+        // 获取 div 元素中的文本内容
+        const textToCopy = this.$refs.copyText.innerText;
+        
+        // 使用浏览器的剪贴板 API 复制文本
+        await navigator.clipboard.writeText(textToCopy);
+        
+        // 提示用户复制成功
         this.showNotification()
       } catch (err) {
-        // 处理可能的错误，例如权限被拒绝
-        alert('复制失败: ' + err.message);
+        // 处理错误，比如用户拒绝了剪贴板权限
+        console.error('无法复制文本到剪贴板:', err);
+        alert('无法复制文本到剪贴板，请检查浏览器权限。');
       }
     },
     showNotification() {
@@ -103,14 +108,15 @@
             box-shadow: 0 0 10px rgba(221, 146, 142, 0.40);
         }
         .mobile_div .card .name{
-            font-weight: 100;
+            font-weight: 500;
             font-size: 18px;
+            letter-spacing: 2px;
         }
         .mobile_div .card .link_text{
             opacity: 0.6;
-            font-size: 14px;
-            border:none;
-            margin-bottom: 10px;
+            font-size: 16px;
+            margin-bottom: 16px;
+            letter-spacing: 2px;
         }
         .mobile_div .card_button{
             height: 60px;
