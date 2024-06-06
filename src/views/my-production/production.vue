@@ -2,7 +2,7 @@
  * @Author: Leim99 leiminwork@gmail.com
  * @Date: 2024-05-15 14:24:57
  * @LastEditors: leimin99 leimimwork@gmail.com
- * @LastEditTime: 2024-06-04 19:41:44
+ * @LastEditTime: 2024-06-05 18:33:30
  * @FilePath: /my-blog/src/views/my-production/production.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -54,7 +54,7 @@
             <div class="detail_img">
                 <div v-for="image in item.images">
                 <img :src="image" :key="image" alt="Item image"  v-if="isImage(image)"/>
-                <video width="90%" height="100%" controls  v-else-if="isVideo(image)">
+                <video width="90%" muted="true" height="100%" controls  v-else-if="isVideo(image)">
                     <source :src="image" type="video/mp4">
                   </video>
                   <div v-else>isnull</div>

@@ -2,7 +2,7 @@
  * @Author: Leim99 leiminwork@gmail.com
  * @Date: 2024-04-16 16:34:42
  * @LastEditors: leimin99 leimimwork@gmail.com
- * @LastEditTime: 2024-05-30 19:22:54
+ * @LastEditTime: 2024-06-06 14:02:06
  * @FilePath: /kitten-blog/src/App.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -14,7 +14,11 @@
 <script>
 export default {
   created(){
-    if(this.isMobile()) alert('为了更好的浏览体验，请复制链接到电脑端浏览')
+    if(this.isMobile()) {
+      this.$router.push({
+          name: "mobilepage"
+        });
+    }
   },
   methods:{
     isMobile(){

@@ -175,7 +175,12 @@ export default {
         console.log('this.$route.query.id',this.$route.query.id)
     window.addEventListener('scroll', this.handleScroll);
     // 我的作品tab
+    if(this.tabs){
+      console.log('this.tabs...',this.tabs)
     this.activeTab = this.tabs[0];
+    }else{
+      this.activeIndex = this.$route.query.id
+    }
     this.$nextTick(() => {
       this.updateSlider();
     });
