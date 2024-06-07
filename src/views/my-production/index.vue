@@ -131,7 +131,7 @@ export default {
           items: [
             { id:15, title: 'AE动效', image: require('../../assets/images/fengmian/dongxiao.png'),label:'动效设计 gif',rightShow:false },
             { id:16, title: 'C4D', image: require('../../assets/images/fengmian/c4d.png'),label:'建模练习',rightShow:false },
-            { id:17, title: '杭州艺星会员沙龙视频整合', image: require('../../assets/images/fengmian/shipinjianji.png'),label:' PR视频剪辑',rightShow:false },
+            { id:17, title: '杭州艺星会员沙龙活动视频整合', image: require('../../assets/images/fengmian/shipinjianji.png'),label:' PR视频剪辑',rightShow:false },
           ]
         }
       ]
